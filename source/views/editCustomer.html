@@ -1,0 +1,54 @@
+<div class="container">
+    <div class="panel panel-info">
+      <div class="panel-heading">
+          <div class="panel-title">Edit User</div>
+      </div>
+      <div class="panel-body" >
+        <form ng-hide="isCustomerUpdated" class="form-horizontal">
+          <div class="form-group required">
+              <label for="id_email" class="control-label col-md-4">Email</label>
+              <div class="controls col-md-8">
+                  <input class="form-control" id="id_email" name="customer.email" placeholder="Your email address" type="email" ng-model="customer.email" required/>
+              </div>     
+          </div>
+          <div class="form-group required"> 
+              <label for="id_fname" class="control-label col-md-4">First Name</label> 
+              <div class="controls col-md-8"> 
+                  <input class="form-control" id="id_fname" name="customer.firstname" placeholder="Your frist name" type="text" ng-model="customer.firstname" required/>
+              </div>
+          </div>
+          <div class="form-group required"> 
+              <label for="id_lname" class="control-label col-md-4">Last Name</label> 
+              <div class="controls col-md-8"> 
+                  <input class="input-md form-control" id="id_lname" name="customer.lastname" placeholder="Your last name" type="text" ng-model="customer.lastname" required/>
+              </div>
+          </div>
+          <div class="form-group required">
+               <label for="id_number" class="control-label col-md-4">Username</label>
+               <div class="controls col-md-8">
+                   <input class="form-control" id="id_number" name="customer.username" placeholder="Your username" type="tel" ng-model="customer.username" required/>
+              </div> 
+          </div>
+          <div class="form-group required"> 
+              <label for="id_password" class="control-label col-md-4">Password</label>
+              <div class="controls col-md-8 "> 
+                   <input class="form-control" id="id_password" name="customer.password" placeholder="Your password" type="password" ng-model="customer.password" required/>
+              </div>
+          </div>
+          <div class="form-group"> 
+              <div class="aab controls col-md-4 "></div>
+              <div class="controls col-md-8">
+                  <button class="btn btn btn-success margin-right" ng-click="updateCustomer()">Update</button>
+                  <button class="btn btn-danger" ui-sref="viewCustomers">Cancel</button>
+              </div>
+          </div>
+        </form>
+        <div ng-show="isCustomerUpdated">
+          <div class="alert alert-success">
+            <strong>You have successfully updated <span ng-bind="customer.firstname + ', ' + customer.lastname"><span>!</strong>
+          </div>
+          <div class="text-center"><button class="btn btn-primary" ui-sref="viewCustomers">View Users Lists</button></div>
+        </div>
+      </div>
+  </div>
+</div>

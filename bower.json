@@ -1,0 +1,24 @@
+{
+  "name": "gmapp",
+  "version": "1.0.0",
+  "description": "GM App",
+  "moduleType": [
+    "node"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "keywords": [
+    "GM",
+    "App"
+  ],
+  "authors": [
+    "Pavan"
+  ],
+  "dependencies": {
+    "jquery": "~3.2.0",
+    "angular": "~1.4.7",
+    "angular-ui-router": "~0.3.1",
+    "bootstrap": "~3.0.0",
+    "ngstorage": "^0.3.11"
+  }
+}
