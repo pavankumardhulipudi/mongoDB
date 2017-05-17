@@ -1,11 +1,13 @@
 (function() {
 	"use strict";
 
-	angular.module("gm.factories").factory("CustomerFactory", [
+	angular.module("um.factories").factory("CustomerFactory", [
 		"personSvc",
 		function(personSvc) {
 
 			var customerFactory = {};
+
+			customerFactory.selectedDatabase;
 
 			customerFactory.selectedCustomer;
 

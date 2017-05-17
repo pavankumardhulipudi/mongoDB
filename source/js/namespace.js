@@ -1,31 +1,31 @@
 (function() {
 	"use strict";
 
-	angular.module("gm.common", []);
+	angular.module("um.common", []);
 
-	angular.module("gm.factories", [
-		"gm.common"
+	angular.module("um.factories", [
+		"um.common"
 	]);
 
-	angular.module("gm.services", [
-		"gm.common"
+	angular.module("um.services", [
+		"um.common"
 	]);
 
-	angular.module("gm.filters", [
-		"gm.common"
+	angular.module("um.filters", [
+		"um.common"
 	]);
 
-	angular.module("apiServices", [
-		"gm.common"
+	angular.module("um.apiServices", [
+		"um.common"
 	]);
 
-	angular.module("gm.app", [
-		"ui.router",
+	angular.module("um.app", [
 		"ngStorage",
-		"gm.common",
-		"gm.factories",
-		"gm.services",
-		"apiServices"
+		"ui.router",
+		"um.common",
+		"um.factories",
+		"um.services",
+		"um.apiServices"
 	]);
 
 })();

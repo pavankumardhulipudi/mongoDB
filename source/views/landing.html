@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="panel panel-info">
+      <div class="panel-heading">
+          <div class="panel-title">Select Database</div>
+      </div>
+      <div class="panel-body" >
+        <form ng-hide="isCustomerAdded" class="form-horizontal">
+          <div class="form-group required">
+              <label for="id_database" class="control-label col-md-5">Database</label>
+              <div class="controls col-md-3">
+                  <select id="id_database" class="input-md form-control" ng-model="selectedDatabase" ng-model="myColor" ng-options="db.value as db.label for db in availableDBs">
+                    <option value="" selected>Selecte a database</option>
+                  </select>
+              </div>     
+          </div>
+          <div class="form-group"> 
+              <div class="text-center"><button class="btn btn-primary" ng-click="selectDatabase()">Connect</button></div>
+          </div>
+        </form>
+      </div>
+  </div>
+</div>

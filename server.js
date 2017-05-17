@@ -4,6 +4,7 @@ var express = require("express"),
 	app = express(),
 	mongoose = require("mongoose");
 
+	//mongoose.Promise = require("bluebird");
 //parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }));
 //parse application/json
@@ -38,5 +39,3 @@ app.listen(3030, function(err) {
 		console.log("App is listening on port 3030");
 	}
 });
-
-mongoose.connect("mongodb://localhost/mamu");

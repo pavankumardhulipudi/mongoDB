@@ -5,6 +5,7 @@
   "license": "MIT",
   "dependencies": {
     "body-parser": "^1.17.1",
+    "bluebird": "^3.5.0",
     "ejs": "~2.3.4",
     "express": "~4.13.3",
     "mongoose": "~4.9.8"

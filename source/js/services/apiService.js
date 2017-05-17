@@ -1,23 +1,31 @@
 (function() {
 	"use strict";
 
-	angular.module("apiServices")
+	angular.module("um.apiServices")
 		.service("personSvc", function($http) {
+
+			this.selectedDatabase = "";
+			
 			this.getCustomer = function(_id){
-				$http.post("/api/person/"+_id);
-			}
-	        this.getCustomers = function() {
-	        	return $http.get("/api/person/");
-	        };
-			this.addCustomer = function(person) {
-				$http.post("/api/person/", person);
+				$http.post("/api/person/"+this.selectedDatabase+_id);
 			};
+	        
+	        this.getCustomers = function() {
+	        	return $http.get("/api/person/"+this.selectedDatabase);
+	        };
+			
+			this.addCustomer = function(person) {
+				$http.post("/api/person/"+this.selectedDatabase, person);
+			};
+	        
 	        this.updateCustomer = function(person) {
 	        	console.log("Before send -- ", person);
-				$http.put("/api/person/"+person.person._id, person);
+				$http.put("/api/person/"+this.selectedDatabase+"/"+person.person._id, person);
 			};
+			
 			this.deleteCustomer = function(_id) {
-				$http.delete("/api/person/"+_id);
+				$http.delete("/api/person/"+this.selectedDatabase+"/"+_id);
 			};
+		
 		});
 })();

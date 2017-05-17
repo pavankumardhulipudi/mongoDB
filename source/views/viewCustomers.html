@@ -1,7 +1,7 @@
 <div class="container">
   <div class="panel panel-info">
     <div class="panel-heading">
-        <div class="panel-title">Users List</div>        
+        <div class="panel-title">{{selectedDatabase}}: Users</div>        
     </div>
     <div class="panel-body">
       <p ng-hide="customers.length">No results found! Please click on below button to add customers.</p>
@@ -31,7 +31,10 @@
       </table>
     </div>
   </div>
-  <div class="text-center"><button class="btn btn-primary" ui-sref="addCustomer">Add New User</button></div>
+  <div class="text-center">
+    <button class="btn btn-primary margin-right" ui-sref="landing">Cancel</button>
+    <button class="btn btn-primary" ui-sref="addCustomer">Add New User</button>
+  </div>
   <h3 class="text-center"></h3>
   <div class="modal-content">
   <div class="modal fade" id="myModal" role="dialog">

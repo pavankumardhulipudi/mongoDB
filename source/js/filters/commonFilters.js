@@ -1,7 +1,7 @@
 (function() {
 	"use strict";
 
-	angular.module("gm.filters").filter("CommonFilter", [
+	angular.module("um.filters").filter("CommonFilter", [
 		function(rootscope) {
 			
 		}

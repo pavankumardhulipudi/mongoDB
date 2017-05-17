@@ -1,12 +1,17 @@
 (function() {
 	"use strict";
 
-	angular.module("gm.app").config(function($stateProvider, $urlRouterProvider) {
+	angular.module("um.app").config(function($stateProvider, $urlRouterProvider) {
 		$stateProvider
+			.state("landing", {
+				url: "/landing",
+				templateUrl: "/views/landing.html",
+				controller: "LandingCtrl"
+			})
 			.state("viewCustomers", {
 				url: "/view",
 				templateUrl: "/views/viewCustomers.html",
-				controller: "CustomersCtrl"
+				controller: "ViewCustomersCtrl"
 			})
 			.state("editCustomer", {
 				url: "/edit",
@@ -18,7 +23,7 @@
 				templateUrl: "/views/addCustomer.html",
 				controller: "AddCustomerCtrl"
 			});
-		$urlRouterProvider.otherwise("/view");
+		$urlRouterProvider.otherwise("/landing");
 	});
 
 })();

@@ -1,9 +1,15 @@
 (function() {
 	"use strict";
 
-	angular.module("gm.common").controller("CustomersCtrl", [
+	angular.module("um.common").controller("ViewCustomersCtrl", [
 		"$scope", "$state", "CustomerFactory", "personSvc",
 		function(scope, state, customerFactory, personSvc) {
+			
+			if(!customerFactory.selectedDatabase) {
+				state.go("landing");
+			}
+
+			scope.selectedDatabase = customerFactory.selectedDatabase;
 
 			personSvc.getCustomers().then(function(response){
 				scope.customers = response.data || [];

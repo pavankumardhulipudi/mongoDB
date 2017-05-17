@@ -1,15 +1,22 @@
 (function() {
 	"use strict";
 
-	angular.module("gm.common").controller("EditCustomerCtrl", [
+	angular.module("um.common").controller("EditCustomerCtrl", [
 		"$scope", "$state", "CustomerFactory",
 		function(scope, state, customerFactory) {
+
+			if(!customerFactory.selectedDatabase) {
+				state.go("landing");
+			}
+
+			scope.selectedDatabase = customerFactory.selectedDatabase;
 
 			scope.customer = customerFactory.selectedCustomer;
 
 			if(!scope.customer) {
 				state.go("viewCustomers");
 			}
+
 			scope.isCustomerUpdated = false;
 
 			scope.updateCustomer = function() {

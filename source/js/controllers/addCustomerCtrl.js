@@ -1,10 +1,16 @@
 (function() {
 	"use strict";
 
-	angular.module("gm.common").controller("AddCustomerCtrl", [
+	angular.module("um.common").controller("AddCustomerCtrl", [
 		"$scope", "$state", "CustomerFactory",
 		function(scope, state, customerFactory) {
 
+			if(!customerFactory.selectedDatabase) {
+				state.go("landing");
+			}
+
+			scope.selectedDatabase = customerFactory.selectedDatabase;
+			
 			scope.customer = {};
 
 			scope.isCustomerAdded = false;
